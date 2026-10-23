@@ -171,26 +171,41 @@
                 <a href="https://classroomjq.github.io/evw/" target=" target="_blank" class="play-btn">Zagraj ➔</a>
             </div>
          </div>
-        <!-- KARTA: ROBLOX (Troll) -->
-        <div class="game-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_2017.svg" alt="Roblox" class="game-thumb" style="padding: 20px; object-fit: contain;">
-            <div class="card-content">
-                <h2>Roblox</h2>
-                <a href="#" class="play-btn" onclick="startTroll(event)">Zagraj ➔</a>
-            </div>
-        </div> 
-<!-- Ekran żartu -->
-<div id="troll" style="display:none; position:fixed; inset:0; background:#000; z-index:9999;">
-    <iframe id="troll-frame" src="" style="width:100%; height:100%; border:none;" allow="autoplay"></iframe>
+<!-- Pełnoekranowy obrazek/GIF żartu -->
+<div id="troll-gif-box" style="display:none; position:fixed; inset:0; background:#000; z-index:9999; text-align:center;" onclick="stopTrollGif()">
+    <img id="troll-img" src="" style="width:100%; height:100%; object-fit:contain;" alt="Prank">
+    <div style="position:absolute; bottom:20px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.7); color:white; padding:10px 20px; border-radius:5px; font-family:sans-serif;">Kliknij cokolwiek, aby zamknąć</div>
 </div>
 
 <script>
 function startTroll(e) {
     e.preventDefault();
-    // Otwiera Rickrolla natychmiast w nowej karcie na pełnym ekranie
-    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+    let box = document.getElementById('troll-gif-box');
+    let img = document.getElementById('troll-img');
+    
+    // Tutaj wklejasz link do śmiesznego GIF-a (np. Rickroll GIF lub inny mem)
+    img.src = "https://media.giphy.com/media/Ju7l5y9osyymQ/giphy.gif"; 
+    
+    box.style.display = 'block';
+    
+    // Włącza tryb pełnoekranowy
+    if (box.requestFullscreen) {
+        box.requestFullscreen();
+    } else if (box.webkitRequestFullscreen) {
+        box.webkitRequestFullscreen();
+    }
+}
+
+function stopTrollGif() {
+    let box = document.getElementById('troll-gif-box');
+    box.style.display = 'none';
+    
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+    }
 }
 </script>
-
 </body>
 </html>
