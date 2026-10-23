@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Strona babki z grami</title>
+    <title>Moja Strona z Grami</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,38 +13,66 @@
         }
         h1 {
             text-align: center;
+            margin-bottom: 30px;
         }
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             max-width: 1000px;
             margin: 0 auto;
         }
         .game-card {
             background-color: #1e1e1e;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             text-align: center;
+            transition: transform 0.2s ease;
         }
-        iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-            border-radius: 4px;
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+        .game-card h2 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+        .play-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+        }
+        .play-btn:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
 
-    <h1>Darmowe gry Babki</h1>
+    <h1>🎮 Darmowe Gry Przeglądarkowe</h1>
 
     <div class="games-grid">
+        
+        <!-- Gra 1 -->
         <div class="game-card">
-            <h2>Minecamf</h2>
-            <iframe src="https://classic.minecraft.net/" allowfullscreen="true" sandbox="allow-scripts allow-same-origin allow-pointer-lock"></iframe>
+            <h2>Minecraft Classic</h2>
+            <p>Oficjalna klasyczna wersja gra Minecraft bezpośrednio w przeglądarce.</p>
+            <a href="https://classic.minecraft.net/" target="_blank" class="play-btn">Zagraj teraz ➔</a>
         </div>
+
+        <!-- Gra 2 (Przykład kolejnej gry) -->
+        <div class="game-card">
+            <h2>Przykładowa Inna Gra</h2>
+            <p>Opis kolejnej gry, którą chcesz dodać na swoją stronę.</p>
+            <a href="LINK_DO_INNEJ_GRY" target="_blank" class="play-btn">Zagraj teraz ➔</a>
+        </div>
+
     </div>
 
 </body>
