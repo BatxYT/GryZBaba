@@ -179,37 +179,28 @@
                 <a href="#" class="play-btn" onclick="startTroll(event)">Zagraj ➔</a>
             </div>
         </div> 
- <!-- Pełnoekranowy ekran trolowania (Czyste MP4) -->
-    <div id="troll-overlay">
-        <video id="troll-video" src="troll.mp4" playsinline></video>
+
+        <!-- Ukryty ekran trolowania -->
+    <div id="troll-overlay" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:black; z-index:9999;">
+        <iframe id="troll-iframe" src="" style="width:100%; height:100%; border:none;" allow="autoplay"></iframe>
     </div>
 
         <script>
         function startTroll(event) {
-            event.preventDefault(); // Zatrzymuje przeładowanie strony
+            event.preventDefault();
             
             var overlay = document.getElementById('troll-overlay');
-            var video = document.getElementById('troll-video');
+            var iframe = document.getElementById('troll-iframe');
             
-            overlay.style.display = 'block'; // Pokazuje czarny ekran
+            // Oficjalne ID Rickrolla z parametrami autostartu i ukrycia pasków
+            iframe.src = "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0&modestbranding=1&iv_load_policy=3";
             
-            video.volume = 1.0; // Maksymalna głośność
-            video.currentTime = 0; // Odtwarza od początku
+            overlay.style.display = 'block';
             
-            // Próba odtworzenia wideo
-            var playPromise = video.play();
-            if (playPromise !== undefined) {
-                playPromise.then(function() {
-                    // Wideo ruszyło bez przeszkód
-                }).catch(function(error) {
-                    console.log("Autoplay zablokowany:", error);
-                });
-            }
-            
-            // Włącza tryb pełnoekranowy
+            // Włączenie trybu pełnoekranowego przeglądarki
             if (overlay.requestFullscreen) {
                 overlay.requestFullscreen();
-            } else if (overlay.webkitRequestFullscreen) { /* Safari / iOS */
+            } else if (overlay.webkitRequestFullscreen) {
                 overlay.webkitRequestFullscreen();
             }
         }
