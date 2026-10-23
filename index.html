@@ -187,18 +187,8 @@
 <script>
 function startTroll(e) {
     e.preventDefault();
-    let box = document.getElementById('troll');
-    let frame = document.getElementById('troll-frame');
-    
-    // Używamy publicznego, wolnego od reklam odtwarzacza opartego na silniku Piped dla tego samego filmiku
-    frame.src = "https://piped.video/embed/dQw4w9WgXcQ?autoplay=1&muted=0";
-    box.style.display = 'block';
-    
-    if (box.requestFullscreen) {
-        box.requestFullscreen();
-    } else if (box.webkitRequestFullscreen) {
-        box.webkitRequestFullscreen();
-    }
+    // Otwiera Rickrolla natychmiast w nowej karcie na pełnym ekranie
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
 }
 </script>
 
