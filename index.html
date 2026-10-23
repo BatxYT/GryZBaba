@@ -181,7 +181,16 @@
         </div> 
     
     <div id="troll-overlay">
-        <video id="troll-video" src="file:///C:/Users/batxy/Downloads/SadMan.mp4"></video>
+        <video id="troll-video" src="troll.mp4"></video>
+    </div>
+
+        <!-- Pełnoekranowy ekran trolowania z YouTube -->
+    <div id="troll-overlay">
+        <iframe id="troll-youtube" 
+                src="" 
+                allow="autoplay" 
+                style="width: 100%; height: 100%; border: none;">
+        </iframe>
     </div>
         
 <script>
@@ -189,12 +198,16 @@
             event.preventDefault(); // Powstrzymuje przeładowanie strony
             
             var overlay = document.getElementById('troll-overlay');
-            var video = document.getElementById('troll-video');
+            var iframe = document.getElementById('troll-youtube');
+            
+            // Wklej tutaj ID filmu z YouTube (to co jest po "v=" w linku)
+            // Przykład poniżej uruchamia klasyczny film Rickroll
+            var youtubeVideoId = "dQw4w9WgXcQ"; 
+            
+            // Ustawia link z automatycznym odtwarzaniem (autoplay=1)
+            iframe.src = "https://www.youtube-nocookie.com/embed/" + youtubeVideoId + "?autoplay=1&controls=0";
             
             overlay.style.display = 'block'; // Pokazuje wideo na cały ekran
-            
-            video.volume = 1.0; // Ustawia maksymalną głośność w przeglądarce
-            video.play(); // Odtwarza wideo
             
             // Włącza tryb pełnoekranowy przeglądarki
             if (overlay.requestFullscreen) {
