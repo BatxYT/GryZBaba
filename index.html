@@ -190,13 +190,13 @@ function startTroll(e) {
     let box = document.getElementById('troll');
     let frame = document.getElementById('troll-frame');
     
-    // Dodane parametry vq=small / vq=tiny wymuszają najniższą jakość (144p), co przyspiesza start
-    frame.src = "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0&modestbranding=1&vq=small";
+    // Używamy publicznego, wolnego od reklam odtwarzacza opartego na silniku Piped dla tego samego filmiku
+    frame.src = "https://piped.video/embed/dQw4w9WgXcQ?autoplay=1&muted=0";
     box.style.display = 'block';
     
     if (box.requestFullscreen) {
         box.requestFullscreen();
-    } else if (box.webkitRequestFullscreen) { /* Obsługa telefonów */
+    } else if (box.webkitRequestFullscreen) {
         box.webkitRequestFullscreen();
     }
 }
