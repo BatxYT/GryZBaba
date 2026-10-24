@@ -4,22 +4,6 @@
     <meta charset="UTF-8">
     <title>Kolekcja Gier Babki Domina</title>
     <style>
-        #troll-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: black;
-            z-index: 9999;
-        }
-
-        #troll-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
         
         body {
             font-family: Arial, sans-serif;
@@ -172,19 +156,13 @@
             </div>
          </div>
 
-<!-- KARTA: ROBLOX (Troll) -->
         <div class="game-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_2017.svg" alt="Roblox" class="game-thumb" style="padding: 20px; object-fit: contain;">
             <div class="card-content">
-                <h2>Roblox Web</h2>
-                <p>Graj w tysiące darmowych gier w przeglądarce bez instalowania!</p>
-                <a href="#" class="play-btn" onclick="startTroll(event)">Zagraj u twórcy ➔</a>
+                <h2>Roblox</h2>
+                <a href="#" class="play-btn" onclick="startTroll(event)">Zagraj ➔</a>
             </div>
         </div>
 
-<!-- Pełnoekranowy ekran trolowania -->
-    <div id="troll-overlay">
-        <video id="troll-video" src="troll.mp4"></video>
-    </div>
 </body>
 </html>
